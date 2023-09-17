@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abel-hid <abel-hid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 15:01:56 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/08/06 13:12:05 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/09/17 12:46:50 by abel-hid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	wait_for_all(t_command *cmd)
 	}
 	if (s != 0)
 		g_exit_st.status = s / 256;
-	else
+	if (s == 0 && g_exit_st.status != 130 && g_exit_st.status != 131)
 		g_exit_st.status = 0;
 }
 

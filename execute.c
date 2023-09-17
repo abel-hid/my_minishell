@@ -6,7 +6,7 @@
 /*   By: abel-hid <abel-hid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 15:20:27 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/09/16 16:46:38 by abel-hid         ###   ########.fr       */
+/*   Updated: 2023/09/17 12:48:38 by abel-hid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ int	ft_lst_size(t_command *cmd)
 	return (i);
 }
 
+void	handle_cmd(void)
+{
+	ft_putstr_fd("Quit: 3\n", 1);
+	g_exit_st.status = 131;
+	g_exit_st.in_cmd = 0;
+}
+
 void	signal_handler(int signal)
 {
 	if (g_exit_st.in_here_doc == 1 && signal == SIGINT)
@@ -71,8 +78,5 @@ void	signal_handler(int signal)
 		}
 	}
 	else if (signal == SIGQUIT && g_exit_st.in_cmd == 1)
-	{
-		ft_putstr_fd("Quit: 3\n", 1);
-		g_exit_st.status = 131;
-	}
+		handle_cmd();
 }

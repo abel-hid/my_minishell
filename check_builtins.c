@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_builtins.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abel-hid <abel-hid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:51:22 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/09/16 10:57:37 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/09/17 13:25:49 by abel-hid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ void	check_and_execute_builtins(t_command *cmd, t_env **envp)
 	}
 	else if (ft_strcmp(cmd->args[0], "env") == 0)
 	{
-		if(cmd->args[1] != NULL)
+		if (cmd->args[1] != NULL)
 		{
 			ft_error("env: ", cmd->args[1], ": No such file or directory\n");
 			g_exit_st.status = 127;
 			return ;
-		}	
+		}
 		ft_env(envp);
 	}
 	else if (ft_strcmp(cmd->args[0], "unset") == 0)

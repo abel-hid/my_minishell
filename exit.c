@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abel-hid <abel-hid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 15:24:39 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/08/07 12:23:13 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/09/17 12:44:44 by abel-hid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	handle_digit_exit(t_command *cmd)
 		ft_putstr_fd("exit\n", 1);
 		g_exit_st.status = 1;
 		ft_putstr_fd("minishell: exit: too many arguments\n", 2);
-		exit (1);
+		return ;
 	}
 	else
 		print_exit_error(cmd->args[1], a);
